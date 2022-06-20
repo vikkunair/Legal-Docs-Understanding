@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+transformers = "*"
+torch = "*"
+seaborn = "*"
+matplotlib = "*"
+fastapi = "*"
+pydantic = "*"
+uvicorn = "*"
+starlette = "*"
+jinja2 = "*"
+aiofiles = "*"
+python-multipart = "*"
+
+[dev-packages]
+ipykernel = "*"
+notebook = "*"
+
+[requires]
+python_version = "3.9"

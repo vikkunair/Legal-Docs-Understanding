@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <script type="text/javascript">
+         function submitForm() {
+             var formElement = document.getElementById('myForm');
+             var data = new FormData(formElement);
+             fetch('/submit', {
+                   method: 'POST',
+                   body: data,
+                 })
+                 .then(response => response.text())
+                 .then(data => {
+                   document.getElementById("responseArea").innerHTML = data;
+                 })
+                 .catch(error => {
+                   console.error(error);
+                 });
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Contract Obligation Demo</h1>
+      <form method="post" id="myForm">
+         <label for="question" style="font-size: 20px">Question</label>
+         <input type="text" name="question" id="question" style="font-size: 10pt; height: 200px; width:170px;"/>
+         <label for="contracttext" style="font-size: 20px">Contract Text</label>
+         <input type="text" name="contracttext" id="contracttext" style="font-size: 18pt; height: 200px; width:170px; "/>
+         <br>
+         <input type="button" value="Predict" onclick="submitForm()" style="margin-left:270px; margin-top:80px;">
+      </form>
+      <p style="margin-left:270px; margin-top:50px;"><b>Result</b><p></p>
+      <div id="responseArea">
+         
+      </div>
+   </body>
+</html>
